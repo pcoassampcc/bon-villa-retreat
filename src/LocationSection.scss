@@ -1,0 +1,27 @@
+/* Location Section Styles */
+.location-section {
+  background: #e9e5da;
+}
+.location-section h2 {
+  color: #3e5c3a;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+.location-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.location-section a {
+  color: #3e5c3a;
+  text-decoration: underline;
+}
+.location-section .btn-secondary {
+  margin-top: 1rem;
+}
+@media (max-width: 900px) {
+  .location-section .container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

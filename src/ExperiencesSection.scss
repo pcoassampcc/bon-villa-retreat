@@ -1,0 +1,50 @@
+/* Experiences Section Styles */
+.experiences-section {
+  background: #e9e5da;
+}
+.experiences-section h2 {
+  color: #3e5c3a;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.experiences-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.experience-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(62,92,58,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  max-width: 260px;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+.experience-card:hover {
+  box-shadow: 0 8px 32px rgba(62,92,58,0.16);
+}
+.experience-icon {
+  margin-bottom: 1rem;
+}
+.experience-card h3 {
+  color: #3e5c3a;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+}
+.experience-card p {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .experiences-list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

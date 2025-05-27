@@ -1,0 +1,66 @@
+/* Reset and base styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  background: #f7f6f2;
+  color: #222;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: #3e5c3a;
+  margin-top: 0;
+}
+
+a {
+  color: #3e5c3a;
+  text-decoration: none;
+}
+a:hover {
+  color: #a68a64;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4rem 0 3rem 0;
+}
+
+.btn {
+  background: #3e5c3a;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(62, 92, 58, 0.08);
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn:hover {
+  background: #a68a64;
+  color: #f7f6f2;
+}
