@@ -1,33 +1,90 @@
+@import './styles.scss';
+
 /* Gallery Section Styles */
 .gallery-section {
-  background: #f7f6f2;
+  background: linear-gradient(to bottom, $color-light 0%, $color-accent 100%);
+  padding: 6rem 0;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: $color-primary;
+    margin-bottom: 3rem;
+    font-family: $font-secondary;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: $color-secondary;
+    }
+  }
 }
-.gallery-section h2 {
-  color: #3e5c3a;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-}
+
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  columns: 4 250px;
+  column-gap: 1.5rem;
+  padding: 0 1.5rem;
+
+  @media (max-width: 768px) {
+    columns: 2 200px;
+  }
 }
+
 .gallery-thumb {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(62,92,58,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+  border-radius: 0.8rem;
+  transition: all 0.4s ease;
+  transform: scale(1);
+  position: relative;
+  cursor: pointer;
+  box-shadow: $shadow-soft;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba($color-primary, 0) 0%,
+      rgba($color-primary, 0.6) 100%
+    );
+    border-radius: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: $shadow-strong;
+
+    &::before {
+      opacity: 1;
+    }
+  }
 }
-.gallery-thumb:hover {
-  transform: scale(1.04);
-  box-shadow: 0 8px 32px rgba(62,92,58,0.16);
-}
-@media (max-width: 600px) {
-  .gallery-thumb {
-    height: 120px;
+
+// Lightbox customization
+:global {
+  .yarl__container {
+    background: rgba($color-dark, 0.95) !important;
+  }
+
+  .yarl__button {
+    filter: drop-shadow(0 0 2px rgba($color-white, 0.3));
+
+    &:hover {
+      filter: drop-shadow(0 0 4px rgba($color-white, 0.5));
+    }
   }
 }
