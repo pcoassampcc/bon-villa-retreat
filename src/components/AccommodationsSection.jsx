@@ -3,21 +3,21 @@ import '../AccommodationsSection.scss';
 
 const accommodations = [
   {
-    name: 'Cottage Rooms',
-    image: '/accommodation-cottage.jpg',
-    description: 'Charming, private cottages with modern amenities and serene views. Perfect for couples and families seeking comfort in nature.',
+    name: 'Executive Room',
+    image: 'https://bonvillaretreat.co.in/assets/images/rooms/Executive-Room.jpg',
+    description: 'Chic, private rooms with modern amenities and serene views. Perfect for couples and families seeking comfort in nature.',
     link: '#',
   },
   {
-    name: 'Luxury Tents',
-    image: '/accommodation-tent.jpg',
-    description: 'Spacious, beautifully appointed tents for a unique glamping experience. Enjoy the sounds of the wild with all the luxuries you desire.',
+    name: 'Deluxe Room',
+    image: 'https://bonvillaretreat.co.in/assets/images/rooms/Deluxe-Room.jpg',
+    description: 'Spacious, beautifully appointed rooms for a unique luxury experience. Enjoy the sounds of the wild with all the luxuries you desire.',
     link: '#',
   },
   {
-    name: 'Dormitories',
-    image: '/accommodation-dorm.jpg',
-    description: 'Cozy, well-designed dormitories ideal for groups and solo travelers. Affordable comfort with a community vibe.',
+    name: 'Super Deluxe Room',
+    image: 'https://bonvillaretreat.co.in/assets/images/rooms/Super-Deluxe-Room.jpg',
+    description: 'Cozy, well-designed rooms ideal for groups and solo travelers. Affordable comfort with a community vibe.',
     link: '#',
   },
 ];

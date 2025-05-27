@@ -1,33 +1,54 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 import '../HeroSection.scss';
 
-const HeroSection = () => (
-  <section className="hero-section" style={{
-    background: 'url(/hero-bg.jpg) center/cover no-repeat',
-    minHeight: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative',
-    color: '#fff',
-  }}>
-    <div className="hero-overlay" style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      background: 'rgba(34, 34, 34, 0.45)',
-      zIndex: 1,
-    }} />
-    <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-      <h1 style={{ fontSize: '3rem', fontWeight: 700, marginBottom: '1rem', letterSpacing: '2px' }}>Bon Villa Retreat</h1>
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 400, marginBottom: '2rem', fontFamily: 'Playfair Display, serif' }}>
-        Reconnect with Nature in Luxury
-      </h2>
-      <a href="#reservation" className="btn" style={{ fontSize: '1.2rem', padding: '1rem 3rem' }}>Book Now</a>
-    </div>
-  </section>
-);
+const bannerImages = [
+  'https://bonvillaretreat.co.in/assets/images/slider/slider1.jpg',
+  'https://bonvillaretreat.co.in/assets/images/slider/slider2.jpg',
+  'https://bonvillaretreat.co.in/assets/images/slider/slider3.jpg',
+];
+
+const HeroSection = () => {
+  const [current, setCurrent] = React.useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % bannerImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="hero-section">
+      <div className="hero-background" style={{
+        background: `url(${bannerImages[current]}) center/cover no-repeat`,
+      }} />
+      <div className="hero-overlay" />
+      <div className="container hero-content">
+        <div className="hero-text">
+          <h1>Bon Villa Retreat</h1>
+          <div className="hero-separator"></div>
+          <h2>Reconnect with Nature in Luxury</h2>
+          <a href="#reservation" className="btn btn-hero">
+            Book Your Escape
+          </a>
+        </div>
+      </div>
+      <div className="hero-dots">
+        {bannerImages.map((_, i) => (
+          <button 
+            key={i}
+            className={`hero-dot ${i === current ? 'active' : ''}`}
+            onClick={() => setCurrent(i)}
+            aria-label={`View slide ${i + 1}`}
+          />
+        ))}
+      </div>
+      <a href="#about" className="scroll-indicator">
+        <FaChevronDown />
+      </a>
+    </section>
+  );
+};
 
 export default HeroSection;

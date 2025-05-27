@@ -4,13 +4,19 @@ import 'yet-another-react-lightbox/styles.css';
 import '../GallerySection.scss';
 
 const images = [
-  { src: '/gallery-1.jpg', alt: 'Resort View 1' },
-  { src: '/gallery-2.jpg', alt: 'Resort View 2' },
-  { src: '/gallery-3.jpg', alt: 'Nature Trail' },
-  { src: '/gallery-4.jpg', alt: 'Luxury Tent' },
-  { src: '/gallery-5.jpg', alt: 'Cottage Room' },
-  { src: '/gallery-6.jpg', alt: 'Bonfire Night' },
-  // Add more images as needed
+  // Home Banners
+  { src: 'https://bonvillaretreat.co.in/assets/images/slider/slider1.jpg', alt: 'Home Banner 1' },
+  { src: 'https://bonvillaretreat.co.in/assets/images/slider/slider2.jpg', alt: 'Home Banner 2' },
+  { src: 'https://bonvillaretreat.co.in/assets/images/slider/slider3.jpg', alt: 'Home Banner 3' },
+  // Room Images
+  { src: 'https://bonvillaretreat.co.in/assets/images/rooms/Executive-Room.jpg', alt: 'Executive Room' },
+  { src: 'https://bonvillaretreat.co.in/assets/images/rooms/Deluxe-Room.jpg', alt: 'Deluxe Room' },
+  { src: 'https://bonvillaretreat.co.in/assets/images/rooms/Super-Deluxe-Room.jpg', alt: 'Super Deluxe Room' },
+  // Gallery Images
+  ...Array.from({ length: 50 }, (_, i) => ({
+    src: `https://bonvillaretreat.co.in/assets/images/gallery/gallery${i + 1}.jpg`,
+    alt: `Gallery Image ${i + 1}`
+  }))
 ];
 
 const GallerySection = () => {
